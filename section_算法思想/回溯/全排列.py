@@ -22,6 +22,20 @@ def permutation(nums):
     backtrack(nums, [])
     return res
 
+def permutation(nums):
+    
+    def backtrack(nums, track):
+        if len(track) == len(nums):
+            res.append(track[:])
+            return
+        for i in range(len(nums)):
+            if nums[i] in track:
+                continue
+            track.append(nums[i])
+            backtrack(nums, track)
+            track.remove(nums[i])
+    res = []
+    
 
 if __name__ == '__main__':
     arr = [1, 2, 3]
